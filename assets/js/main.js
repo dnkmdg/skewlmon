@@ -12,7 +12,6 @@ var app = {
     $.each(app.charts, function(i,n){
       if(document.getElementById(i)){
         var chart = document.getElementById(i).getContext("2d");
-        console.log(app.charts[i]);
         app.charts[i]['chart'] = new Chart(chart,n);
       }
     });
