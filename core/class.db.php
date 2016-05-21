@@ -2,9 +2,9 @@
   
 class db{
       public static function make(){
-        $host = '10.33.67.161';
-        $user = 'stat';
-        $pass = 'test_pass!';
+        $host = 'localhost';
+        $user = 'user';
+        $pass = 'password';
         
         $options = array(
           PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8',
