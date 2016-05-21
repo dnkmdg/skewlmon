@@ -1,0 +1,57 @@
+body {
+  font-family: Monaco, Menlo,"Andale Mono","lucida console","Courier New",monospace !important; 
+  font-size:12px !important;
+  background: #272822; 
+  color: #f8f8f2;
+}
+
+table { 
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th {
+  text-align: left;
+}
+
+th, td {
+  padding: .5em;
+}
+
+tbody tr:nth-child(odd) {
+  background: rgba(0,0,0,.2);
+}
+
+dl {
+  padding: .5em;
+}
+
+dt, dd {
+  display: inline-block;
+  width: 50%;
+  float: left;
+  margin: 0;
+}
+
+dt {
+  clear: left;
+}
+
+dd {
+  color: #9effff
+}
+
+h1,h2,h3,h4,h5{
+  text-align: center;
+}
+
+.query-box {
+  background: rgba(255,255,255,.1);
+  padding: 1em;
+  margin-bottom: 1em;
+}
+
+.query-box span {
+  font-weight: bold;
+}
