@@ -187,15 +187,11 @@ var app = {
         var tx = parseInt(d.status.Bytes_sent);
         var tz = parseInt(d.status.Bytes_received);
         
-        if(this.last_traffic_out == 0){
+        if(this.last_traffic_out == 0 || this.last_traffic_in == 0){
           this.last_traffic_out = tx; 
-          return false;
-        }
-        
-        if(this.last_traffic_in == 0){
           this.last_traffic_in = tz; 
           return false;
-        } 
+        }
         
         if(this.data.labels.length >= 500){
           this.data.labels.shift();
