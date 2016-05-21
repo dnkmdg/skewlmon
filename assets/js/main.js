@@ -112,9 +112,6 @@ var app = {
             n = n.toHHMMSS();
           if(i.substr(0,5) == 'Bytes')           
             n = n.toSize();             
-          if(i.substr(0,5) == 'Han')           
-            n = n.toSize();             
-          
           
           $('.'+i.toLowerCase()).html(n);
         });
