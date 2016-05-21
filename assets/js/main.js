@@ -267,12 +267,6 @@ var app = {
         var data = d.status;
         var self = this;
         
-        if(-0.00001 <= data.Innodb_buffer_pool_pages_total <= 0.00001){
-          
-        } else {
-          data['innodb_ib_usage'] = (100 * (data.Innodb_buffer_pool_pages_total - data.Innodb_buffer_pool_pages_free)) / data.Innodb_buffer_pool_pages_total; 
-        }
-        
         $.each(data,function(i,n){
           i = i.toLowerCase();
           if(self[i] !== undefined){
