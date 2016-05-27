@@ -2,14 +2,14 @@
   global $connections;
   
   $connections = array(
-    'icodev' => array(
-      'host' => 'icodev.eu',
-      'user' => 'stat',
-      'pass' => 'test_pass!'
+    'external_dev' => array(
+      'host' => '10.10.10.10',
+      'user' => 'user',
+      'pass' => 'password'
     ),
     'localhost' => array(
       'host' => 'localhost',
-      'user' => 'stat',
-      'pass' => 'stat'
+      'user' => 'user',
+      'pass' => 'password'
     )
   );
