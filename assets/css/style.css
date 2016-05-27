@@ -5,6 +5,32 @@ body {
   color: #f8f8f2;
 }
 
+a {
+  color: #fff;
+}
+
+.sidebar {
+  background: #2E2E2E;
+  font-size: 2em;
+  text-transform: capitalize;
+}
+
+.sidebar .active {
+  background: rgba(255,255,255,.1);
+}
+
+.content {
+  padding-left: 2em;
+}
+
+.tab {
+  display: none;
+}
+
+.tab.active {
+  display: block;
+}
+
 table { 
   border-spacing: 0;
   border-collapse: collapse;

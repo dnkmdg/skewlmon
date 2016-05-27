@@ -2,11 +2,12 @@
   require_once 'core/class.db.php';
   
   class skewlmon{    
-    function __construct(){
+    function __construct($host){
+      $this->host = $host;
     }
     
     public function get_processlist(){
-      $processes = db::select('show processlist');
+      $processes = db::select('show processlist',$this->host);
       $connections = array(
         'sleep' => 0,
         'query' => 0
@@ -24,14 +25,14 @@
     }
     
     public function get_status(){
-      $status = db::select('show global status;','keypair');
+      $status = db::select('show global status;',$this->host,'keypair');
       $status['full_table_scans'] = round(($status['Handler_read_rnd_next'] + $status['Handler_read_rnd']) / ($status['Handler_read_rnd_next'] + $status['Handler_read_rnd'] + $status['Handler_read_first'] + $status['Handler_read_next'] + $status['Handler_read_key'] + $status['Handler_read_prev']),2);
       
       return $status;
     }
     
     public function get_variables(){
-      $variables = db::select('show variables;','keypair');
+      $variables = db::select('show variables;',$this->host,'keypair');
       
       $wanted = array(
         'version',
@@ -42,7 +43,7 @@
     }
     
     public function get_data(){
-      $result = array('timestamp' => date('H:i:s'));
+      $result = array('host' => $this->host, 'timestamp' => date('H:i:s'));
       
       list($result['connections'],$result['processes']) = $this->get_processlist();
       

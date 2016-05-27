@@ -1,10 +1,14 @@
 <?php
+
+require_once 'config.php';
   
 class db{
-      public static function make(){
-        $host = 'localhost';
-        $user = 'user';
-        $pass = 'password';
+      public static function make($host_key){
+        global $connections;
+        
+        $host = $connections[$host_key]['host'];
+        $user = $connections[$host_key]['user'];
+        $pass = $connections[$host_key]['pass'];
         
         $options = array(
           PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8',
@@ -21,9 +25,9 @@ class db{
 
       }
   
-      public static function select($query, $type="assoc", $binds = null){
+      public static function select($query, $db, $type="assoc", $binds = null){
         try{
-          $pdo = self::make();
+          $pdo = self::make($db);
 
           $ret = '';
           $query = $pdo->prepare($query);
