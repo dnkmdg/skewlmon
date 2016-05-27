@@ -34,11 +34,6 @@
     public function get_variables(){
       $variables = db::select('show variables;',$this->host,'keypair');
       
-      $wanted = array(
-        'version',
-        'hostname'
-      );
-      
       return array('version' => $variables['version'].' @ '.$variables['hostname']);
     }
     
