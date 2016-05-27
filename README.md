@@ -2,4 +2,4 @@
 PHP/JavaScript-based MySQL monitor
 
 #Usage
-Edit connection in core/class.db.php, run, watch, enjoy.
+Edit connection(s) in config.php, run, watch, enjoy.
